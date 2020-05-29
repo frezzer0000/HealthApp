@@ -24,12 +24,12 @@ import {
   DebugInstructions,
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
-import SplashScreen from './Component/Screen.js/SplashScreen'
+import SplashScreen from './Component/Screen/SplashScreen'
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { SvgXml } from 'react-native-svg';
-import SignUp from './Component/Screen.js/SignUp'
-
+import SignUp from './Component/Screen/SignUp'
+import SignIn from './Component/Screen/SignIn'
 
 const HomeScreen= ({navigation}) => {
   return (
@@ -46,11 +46,11 @@ const Stack = createStackNavigator();
 const App= () => {
   return (
     <NavigationContainer>
-      <Stack.Navigator>
+      <Stack.Navigator initialRouteName="SignIn">
         <Stack.Screen name="Home" component={HomeScreen}   options={{ title: 'My home' }}/>
         <Stack.Screen name="Splash" component={SplashScreen} options={{headerShown: false}}/>
         <Stack.Screen name="SignUp" component={SignUp} options={{headerShown: false}}/>
-
+        <Stack.Screen  name="SignIn" component={SignIn} options={{headerShown: false}}/>
       </Stack.Navigator>
     </NavigationContainer>
   );

@@ -315,8 +315,18 @@ can bought from here </Text>
             <Text style={{ fontSize: 14, textAlign: 'center', color: "#3D3D3D", marginLeft: 30, marginRight: 30, marginTop: 40 }}>Book appointments and get best tretment
 on one tap</Text>
           </View>
-            <GradientButton
+            <View style={{shadowColor: "#D8D8D8",
+shadowOffset: {
+	width: 0,
+	height: 5,
+},
+shadowOpacity: 0.9,
+shadowRadius: 6.27,
+
+elevation: 10,}}>
+            <GradientButton navigation={navigation} text={"Getting Start"} screenname={'SignUp'}
             ></GradientButton>
+            </View>
 
        
          
