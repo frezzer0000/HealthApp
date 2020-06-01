@@ -86,6 +86,8 @@ target 'Medical_App' do
 
   pod 'RNCCheckbox', :path => '../node_modules/@react-native-community/checkbox'
 
+  pod 'RNDateTimePicker', :path => '../node_modules/@react-native-community/datetimepicker'
+
   target 'Medical_AppTests' do
     inherit! :complete
     # Pods for testing

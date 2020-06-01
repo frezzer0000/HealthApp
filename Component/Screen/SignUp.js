@@ -10,6 +10,7 @@ import {
   View,
   Text,
   StatusBar,
+  TouchableOpacity,
   TextInput
 } from 'react-native';
 import GradientButton from './GradientButton'
@@ -20,11 +21,12 @@ const SignUp = ({navigation}) =>{
         <TouchableWithoutFeedback>
         <View >
         <View style={styles.backButton}>
-            <Image source={require('../../asses/back-arrow.png')}
-            onPress={() =>{
+        <TouchableOpacity    onPress={() =>{
                 navigation.navigate('Splash')
-            }}
-            ></Image>
+            }}>
+            <Image source={require('../../asses/back-arrow.png')}
+         
+            ></Image></TouchableOpacity>
         </View>
         <Text style={styles.textTitle}>
             Sign Up

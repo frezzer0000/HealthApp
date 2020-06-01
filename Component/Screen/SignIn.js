@@ -32,11 +32,12 @@ const SignIn = ({navigation}) =>{
         <TouchableWithoutFeedback>
         <View >
         <View style={styles.backButton}>
-            <Image source={require('../../asses/back-arrow.png')}
-            onPress={() =>{
+        <TouchableOpacity  onPress={() =>{
                 navigation.navigate('Splash')
-            }}
-            ></Image>
+            }}>
+            <Image source={require('../../asses/back-arrow.png')}
+           
+            ></Image></TouchableOpacity>
         </View>
         <Text style={styles.textTitle}>
             Sign In
@@ -73,8 +74,6 @@ const SignIn = ({navigation}) =>{
   </View>
   
 </View>
-
-            
         <View style={styles.gradientButton}>
         <GradientButton navigation={navigation} text={"Sign up"} screenname={"ForgotPassword"}></GradientButton>
         </View> 
@@ -82,13 +81,13 @@ const SignIn = ({navigation}) =>{
         <Text style={styles.textCheckbox}>Or</Text>
         </View> 
         <View style={{flexDirection: "row"}}>
-            <View style={{ marginTop:22, marginLeft: 22,  borderRadius: 4,borderLeftWidth: 1 ,borderRightWidth:1, borderTopWidth:1, borderBottomWidth:1,width: 146.35, height: 41, borderColor: "#D5D5D5"}}>
+            <View style={{ marginTop:22, marginLeft: 22,  borderRadius: 4,borderLeftWidth: 1 ,borderRightWidth:1, borderTopWidth:1, borderBottomWidth:1,width: 150.35, height: 41, borderColor: "#D5D5D5"}}>
               <TouchableOpacity style={{borderColor: "#D5D5D5"}}>
               <View style={{flex: 1, alignItems: "center", marginTop: 10}}>
                 <Image   source={require('../../asses/facebook-logo.png')}></Image></View>
               </TouchableOpacity>
             </View>
-            <View style={{ marginTop:22, marginLeft: 38,  borderRadius: 4,borderLeftWidth: 1 ,borderRightWidth:1, borderTopWidth:1, borderBottomWidth:1,width: 146.35, height: 41, borderColor: "#D5D5D5"}}>
+            <View style={{ marginTop:22, marginLeft: 30,  borderRadius: 4,borderLeftWidth: 1 ,borderRightWidth:1, borderTopWidth:1, borderBottomWidth:1,width: 150.35, height: 41, borderColor: "#D5D5D5"}}>
               <TouchableOpacity style={{borderColor: "#D5D5D5"}}>
               <View style={{flex: 1, alignItems: "center", marginTop: 10}}>
                 <Image   source={require('../../asses/google-plus-social-logotype.png')}></Image></View>

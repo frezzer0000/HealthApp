@@ -17,19 +17,34 @@ import {Switch,
   StatusBar,
   TextInput
 } from 'react-native';
-
+import GradientButton from './GradientButton'
 
 const ForgotPassword = ({navigation}) =>{
     return(
         <View>
- <View style={styles.backButton}>
-            <Image source={require('../../asses/back-arrow.png')}
-            onPress={() =>{
+        <View style={styles.backButton}>
+        <TouchableOpacity   onPress={() =>{
                 navigation.navigate('SignIn')
-            }}
-            ></Image>
+            }}>
+            <Image source={require('../../asses/back-arrow.png')}
+          
+            ></Image></TouchableOpacity>
         </View>
-
+        <Text style={styles.textTitle}>
+            Forgot Password
+        </Text>
+        <Text style={styles.textTitleSub}>
+        We just need your register e-mail ID to send reset 
+link
+        </Text>
+        <View style={styles.inputContainerColorDefault}>
+        <TextInput  placeholder="E-Mail" placeholderTextColor="#9A9A9A" style={styles.input}>
+       
+        </TextInput>
+        </View>
+        <View style={styles.gradientButton}>
+        <GradientButton text="Reset Password"></GradientButton>
+        </View>
         </View>
 
     )
@@ -74,6 +89,14 @@ fontSize: 12
         marginTop: 70,
         marginLeft: 22
     },
+    textTitleSub: {
+        fontSize: 12,
+        color: '#95989A',
+        marginTop: 11,
+        marginLeft: 22,
+        marginRight: 66
+    },
+
     inputContainerColor: {
         marginLeft: 22,
         marginRight: 22,
