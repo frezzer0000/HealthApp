@@ -84,6 +84,8 @@ target 'Medical_App' do
 
   pod 'BVLinearGradient', :path => '../node_modules/react-native-linear-gradient'
 
+  pod 'RNCCheckbox', :path => '../node_modules/@react-native-community/checkbox'
+
   target 'Medical_AppTests' do
     inherit! :complete
     # Pods for testing

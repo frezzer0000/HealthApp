@@ -1,9 +1,10 @@
 import React, { Component, useState }  from 'react';
 import RadioForm, {RadioButton, RadioButtonInput, RadioButtonLabel} from 'react-native-simple-radio-button';
 
+import CheckBox from '@react-native-community/checkbox';
 
-import {
-    CheckBox,
+import {Switch,
+  TouchableOpacity,
     KeyboardAvoidingView,
   Image,
   Dimensions,
@@ -16,10 +17,16 @@ import {
   StatusBar,
   TextInput
 } from 'react-native';
+
 import GradientButton from './GradientButton'
+var radio_props = [
+  {label: 'param1', value: 0 },
+];
 
 const SignIn = ({navigation}) =>{
-   const [param1, setparam1] = useState('0')
+  const [isEnabled, setIsEnabled] = useState(false);
+  
+  const [value, setvalue] = useState(0);
     return (
         <KeyboardAvoidingView>
         <TouchableWithoutFeedback>
@@ -45,20 +52,55 @@ const SignIn = ({navigation}) =>{
         </TextInput>
         </View>
         <View style={{ flexDirection: 'column'}}>
-  <CheckBox />
-  <View style={{ flexDirection: 'row' }}>
-    <CheckBox
-      //value={this.state.checked}
-     // onValueChange={() => this.setState({ checked: !this.state.checked })}
-    />
-    <Text style={{marginTop: 5}}> this is checkbox</Text>
+        
+  <View style={styles.checkButton}>
+
+  <CheckBox style={{width: 15, height: 15}}
+  lineWidth	={1.5}
+  onTintColor	={'#D5D5D5'}
+  onFillColor={"#19769F"}
+    disabled={false}
+    animationDuration	={0.1}
+    value={isEnabled}
+    onValueChange={() => isEnabled ? setIsEnabled(false) : setIsEnabled(true)}
+  />
+  <View style={{marginLeft: 11}}>
+  <Text style={styles.textCheckbox}>Remmember</Text></View>
+  <View style={{alignItems: "flex-end", marginLeft: 120}}>
+  <Text style={styles.textCheckbox} onPress={() =>{
+    navigation.navigate('ForgotPassword')
+  }}>Forget Password ?</Text></View>
   </View>
+  
 </View>
 
             
         <View style={styles.gradientButton}>
-        <GradientButton navigation={navigation} text={"Sign up"}></GradientButton>
+        <GradientButton navigation={navigation} text={"Sign up"} screenname={"ForgotPassword"}></GradientButton>
         </View> 
+        <View style={{alignItems: "center", marginTop: 22}}>
+        <Text style={styles.textCheckbox}>Or</Text>
+        </View> 
+        <View style={{flexDirection: "row"}}>
+            <View style={{ marginTop:22, marginLeft: 22,  borderRadius: 4,borderLeftWidth: 1 ,borderRightWidth:1, borderTopWidth:1, borderBottomWidth:1,width: 146.35, height: 41, borderColor: "#D5D5D5"}}>
+              <TouchableOpacity style={{borderColor: "#D5D5D5"}}>
+              <View style={{flex: 1, alignItems: "center", marginTop: 10}}>
+                <Image   source={require('../../asses/facebook-logo.png')}></Image></View>
+              </TouchableOpacity>
+            </View>
+            <View style={{ marginTop:22, marginLeft: 38,  borderRadius: 4,borderLeftWidth: 1 ,borderRightWidth:1, borderTopWidth:1, borderBottomWidth:1,width: 146.35, height: 41, borderColor: "#D5D5D5"}}>
+              <TouchableOpacity style={{borderColor: "#D5D5D5"}}>
+              <View style={{flex: 1, alignItems: "center", marginTop: 10}}>
+                <Image   source={require('../../asses/google-plus-social-logotype.png')}></Image></View>
+              </TouchableOpacity>
+            </View>
+        </View>
+        <View style={{alignItems: 'center', marginTop: 88}}>
+            <Text style={{color: "#707070", fontSize: 14}}>Don't Have Account ? <Text style={{color: "#19769F"}}>Create Account.</Text></Text>
+
+        </View>
+
+
         </View></TouchableWithoutFeedback></KeyboardAvoidingView>
     )
 }
@@ -73,8 +115,12 @@ const styles = StyleSheet.create({
         shadowRadius: 6.27,
         
         elevation: 10,
-        marginTop: 44,
+        marginTop: 32,
         alignItems: "center"
+    },
+    textCheckbox:{
+color:"#95989A",
+fontSize: 12
     },
 
 
@@ -82,7 +128,13 @@ const styles = StyleSheet.create({
         marginTop: 40,
         marginLeft: 22
     },
+    checkButton:{
+      flexDirection: "row",
+      marginTop:22,
+      marginLeft: 22
+    },
     textTitle: {
+    
         fontSize: 24,
         color: '#19769F',
         marginTop: 70,

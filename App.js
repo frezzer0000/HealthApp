@@ -30,6 +30,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import { SvgXml } from 'react-native-svg';
 import SignUp from './Component/Screen/SignUp'
 import SignIn from './Component/Screen/SignIn'
+import ForgotPassword from './Component/Screen/ForgotPassword'
 
 const HomeScreen= ({navigation}) => {
   return (
@@ -51,6 +52,8 @@ const App= () => {
         <Stack.Screen name="Splash" component={SplashScreen} options={{headerShown: false}}/>
         <Stack.Screen name="SignUp" component={SignUp} options={{headerShown: false}}/>
         <Stack.Screen  name="SignIn" component={SignIn} options={{headerShown: false}}/>
+        <Stack.Screen  name="ForgotPassword" component={ForgotPassword} options={{headerShown: false}}/>
+
       </Stack.Navigator>
     </NavigationContainer>
   );
